@@ -1,0 +1,12 @@
+runtime: custom
+env: flex
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /stylesheets
+  static_dir: stylesheets
+- url: /images
+  static_dir: images
+- url: /.*
+  script: main.app
