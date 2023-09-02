@@ -1,0 +1,266 @@
+@media print {
+    .header, .footer, .fa-solid, .fa-arrow-left, .back, .containerFooter {
+        display: none !important;
+    }
+    body {
+        background: url("/img/huellaAmbiental.png") !important;
+        background-size: 30% !important;
+
+    }
+    .grillaEvoluciones,.grillaTotalTerritorial{
+        margin-left: 0em;
+    }
+    .recuadroChicoComposicion{
+        width: 900px !important;
+        margin-right: 3em;
+    }
+}
+body {
+    width: 100%;
+    font-family: Lato, sans-serif;
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: auto 1fr auto;
+    background-image: url("/img/fondoHojas.webp");
+    color: white;
+}
+
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #90F098 ;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    width: 80%;
+    margin: 0;
+}
+
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display:flex;
+    flex-wrap: wrap;
+}
+
+ul li a {
+    padding-right: 0rem;
+    text-decoration:none;
+    color: white;
+}
+
+
+.logo{
+  display: flex;
+  align-items: center;
+}
+
+.fotoLogo{
+    width: 50px;
+    height:50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+}
+
+.nav-item{
+    padding: 0.5em;
+    background: #F090B2;
+    border-radius: 1em;
+    border-color: #D35C86;
+    border-width: 0.15em;
+    border-style: solid;
+    margin-right: 1em;
+    font-size: medium;
+}
+
+.nav-item:hover{
+    padding: 0.5em;
+    background: #A34164 ;
+    border-radius: 1em;
+    margin-right: 1em;
+    font-size: medium;
+}
+
+.nav-link{
+    text-decoration:none;
+}
+
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 3rem;
+}
+
+h1 {
+    font-weight: 300;
+}
+
+h2 {
+    font-weight: 300;
+}
+
+footer {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background: #F090B2;
+}
+
+.containerFooter{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    width: 80%;
+    padding: 1rem;
+}
+
+
+.nosotros{
+    display: flex;
+    align-items: center;
+}
+
+.parrafo{
+    display: flex;
+    text: center;
+    padding-left: 0.5rem;
+    font-size: small;
+}
+
+.copyright{
+    display: flex;
+    align-items: center;
+    margin:0;
+    font-size: small;
+}
+
+/*
+.botonDesplegable{
+    background-color: #127973;
+    color: white;
+    padding: 10px;
+    border :none;
+    font-size: 16PX;
+    width: 185px;
+}
+
+.links a{
+    text-decoration:none;
+    color: back;
+    display: block;
+    padding; 13px;
+}
+
+.links{
+    background-color: #229CB0;
+    width: 185px;
+    display: none;
+}
+
+.links a:hover{
+    background-color: white;
+}
+
+.desplegable:hover .links{
+    display:block;
+}
+
+.desplegable{
+    position:absolute;
+}
+*/
+
+/*--------------------------------CLASES PARA USAR EN LAS PAGINAS HIJAS-----------------------------*/
+
+.recuadroChico{
+    padding: 5rem;
+    border-radius: 2rem;
+    background-color: white;
+    /*opacity: 0.9;*/
+    color: black;
+    width: 60%;
+}
+
+.izquierdaYDerecha{
+    display:flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 3rem;
+}
+
+.soloDerecha{
+    display:flex;
+    justify-content: end;
+    margin-top: 3rem;
+}
+
+.elementosFormulario{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 16rem;
+}
+
+.botones{
+    padding: 0.1em 2rem;
+    font-size: 1.5em;
+    background-color: #F090B2;
+    border-radius: 2rem;
+    text-decoration: none;
+    text-align: center;
+    max-width: 20rem;
+    white-space: normal;
+}
+
+.botones-call{
+    padding: 0.1em 2rem;
+    font-size: 1.8em;
+    background-color: #4AA352;
+    border-radius: 2rem;
+}
+/*-------------DE OTRAS CLASES HAY QUE SACARLOS--------------------------*/
+
+.divflex{
+    display:flex;
+    justify-content: center;
+        align-items: center;
+        align-content: center;
+        background-color:white;
+        color:black;
+    border-radius: 2rem;
+}
+.rowflex{
+    display:flex;
+    justify-content: center;
+        align-items: center;
+        align-content: center;
+        width:80%;
+}
+.rowvinculacion{
+    padding: 1px 6px;
+ width:60%
+}
+.back{
+    float: left;
+    font-size: xxx-large;
+    color: black;
+}
+.tituloReportes{
+    display: none;
+}

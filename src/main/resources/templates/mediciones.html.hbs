@@ -1,0 +1,39 @@
+{{#partial "titulo"}}Mediciones{{/partial}}
+<link rel="stylesheet" type="text/css" href="/stylesheets/mediciones.css">
+{{#partial "principal"}}
+     <div class="recuadroChico">
+            <div>
+                <h1>Mediciones</h1>
+                <div class="mediciones">
+                    {{#mediciones}}
+                        <div class="medicion">
+                            <div>
+                                <h5>Tipo de consumo: {{tipoConsumo}}</h5>
+                            </div>
+                            <div>
+                                <h5>Tipo de consumo: {{tipoConsumo}} </h5>
+                            </div>
+                            <div>
+                                <h5>Valor: {{valor}}</h5>
+                            </div>
+                            <div>
+                                <h5>Periodicidad: {{periodicidad}}</h5>
+                            </div>
+                            <div>
+                                <h5>Periodo de imputacion: {{periodoDeImputacion}}</h5>
+                            </div>
+                        </div>
+                    {{/mediciones}}
+                </div>
+            </div>
+
+            <div class="soloDerecha">
+                <a href="/mediciones/nueva">
+                    <input type='submit' class="botones" name='cargarMedicion' value='Cargar medicion'>
+                </a>
+            </div>
+        </div>
+{{/partial}}
+
+{{>layout.html.hbs}}
+

@@ -1,0 +1,14 @@
+.index{
+    display:flex;
+    justify-content: center;
+    background-color: white;
+    color:black;
+    opacity: 0.9;
+    font-size: 1.3em;
+    padding: 3em;
+    margin-top:30;
+    margin-bottom: 0;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+

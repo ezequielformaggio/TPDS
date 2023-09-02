@@ -1,0 +1,53 @@
+{{#partial "titulo"}}Login{{/partial}}
+
+
+
+<html>
+
+<head>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/login.css">
+</head>
+
+<body>
+{{#partial "principal"}}
+    <div class="login">
+        <h1>Impacto ambiental</h1>
+        <p> organizacion 0rg4N1z4C10n</p>
+        <p> pepitoUser p3p1t0PASS</p>
+
+        <form method="POST" action="/login">
+            <div class="row">
+                <div class="usuario">
+                    <label> Usuario</label>
+                    <input type="text" name="username" placeholder="nombre de usuario" style="text-align: center"/>
+                </div>
+
+                <div class="contrasenia">
+                    <label>Contraseña</label>
+                    <input class="col-6 m-2" type="password" name="password" placeholder="contraseña" style="text-align: center"/>
+                </div>
+
+                <div class="acciones">
+                    <div class="iniciarSesion">
+                        <a href="/login" >
+                            <button id = 'botonSucces' type='submit' name='login' value='Login'> Iniciar sesión </button>
+                        </a>
+                    </div>
+                    <div class="registrarse">
+                        <a href="/registro">
+                            <input class="registro" type='button' name='registrar' value='Registrar' >
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+{{/partial}}
+</body>
+
+</html>
+
+
+
+
+{{>layout.html.hbs}}

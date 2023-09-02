@@ -1,0 +1,31 @@
+{{#partial "titulo"}}Reportes{{/partial}}
+<link rel="stylesheet" type="text/css" href="/stylesheets/reportes.css">
+{{#partial "principal"}}
+    <div class="recuadroChico" >
+        <div class="row contenedor" >
+
+            <h1 style="text-align: center">Reportes</h1>
+
+            <div class="izquierdaYDerecha">
+                <div>
+                    <a href="/reportes/composicion" >
+                        <input class="botones" type="button" value="Reportes de Composición" />
+                    </a>
+                </div>
+                <div>
+                    <a href="/reportes/total" >
+                        <input class="botones" type="button" value="Reportes por Totales" />
+                    </a>
+                </div>
+                <div>
+                    <a href="/reportes/evolucion" >
+                        <input class="botones" type="button" value="Reportes por Evolución" />
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{{/partial}}
+
+{{>layout.html.hbs}}

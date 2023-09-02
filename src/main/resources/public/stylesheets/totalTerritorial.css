@@ -1,0 +1,13 @@
+.grillaTotalTerritorial{
+    width: 24.5em;
+    border-style: solid;
+    border-width: 1px;
+    text-align: center;
+    margin-left: 1.8em;
+}
+.totalTerritorial{
+    margin-left: -1em;
+}
+.emisionTotal{
+    margin-left: 5.8em;
+}

@@ -1,0 +1,24 @@
+.trayecto{
+    display: flex;
+    margin-bottom: 2rem;
+    align-items: center;
+    width: 30rem;
+    justify-content: space-between;
+}
+
+.descripcion{
+    margin-right: 3rem;
+    align-items: center;
+}
+
+.listaTrayectos{
+    display: flex;
+    flex-direction: column;
+}
+
+/*.botonCargarTrayecto{
+    padding: 0.7rem;
+    color: black;
+    font-size: 1.3rem;
+}*/
+

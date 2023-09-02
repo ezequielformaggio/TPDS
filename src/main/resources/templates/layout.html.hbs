@@ -1,0 +1,63 @@
+<html>
+
+<head>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/layout.css">
+    <script src="https://kit.fontawesome.com/c15aea6831.js" crossorigin="anonymous"></script>
+    <title>
+        {{#block "titulo" }}
+        {{/block}}
+    </title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <div class = "circulo">
+                    <a href="/" style="display: inline-block">
+                        <img class="fotoLogo" href="/" src="/img/huellaAmbiental.png"/>
+                    </a>
+                </div>
+                <h3>Mi impacto ambiental</h3>
+            </div>
+
+            {{#if sesionIniciada}}
+            <nav>
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a class="nav-link" href="/vinculaciones" >Vinculaciones</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/recomendaciones">Recomendaciones</a></li>
+                    {{#if esMiembro}}
+                        <li class="nav-item"><a class="nav-link" href="/trayectos" >Trayectos</a></li>
+                    {{else}}
+                        <li class="nav-item"><a class="nav-link" href="/mediciones" >Mediciones</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/reportes">Reportes</a></li>
+                    {{/if}}
+                    <li class="nav-item"><a class="nav-link" href="/calculadora">Calculadora de HC</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+                </ul>
+            </nav>
+            {{/if}}
+        </div>
+        <h1 class="tituloReportes">Mi Impacto Ambiental </h1>
+    </div>
+	<main>
+        {{#block "principal" }}
+        {{/block}}
+	</main>
+
+	<footer>
+        <div class="containerFooter">
+            <div class="nosotros">
+                <a href="/">
+                    <img class="fotoLogo" src="/img/huellaAmbiental.png"/>
+                </a>
+                <div class="parrafo">
+                    <h3 >Con nosotros vas a poder medir el impacto de tu actividad en el medio ambiente</h3>
+                </div>
+            </div>
+            <div class="copyright"><h3>Copyright Mi Impacto Ambiental</h3></div>
+        </div>
+	</footer>
+</body>
+
+</html>

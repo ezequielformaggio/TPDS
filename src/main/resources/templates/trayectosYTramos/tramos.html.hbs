@@ -1,0 +1,41 @@
+{{#partial "titulo"}}Tramos{{/partial}}
+<link rel="stylesheet" type="text/css" href="/stylesheets/tramos.css">
+
+{{#partial "principal"}}
+        <div class="recuadroChico">
+            <h1>Tramos del trayecto: {{trayecto.descripcion}}</h1>
+            <div class="tramos">
+                    {{#tramos}}
+                            <div class="tramo">
+                                <div>
+                                    <h5><b>Origen</b></h5>
+                                    <h6> Direccion: {{origen.calle}} {{origen.altura}}, Localidad {{origen.localidad}}</h6>
+                                </div>
+                                <div>
+                                    <h5><b>Destino: </b></h5>
+                                    <h6> Direccion: {{destino.calle}} {{destino.altura}}, Localidad {{destino.localidad}}</h6>
+                                </div>
+                                <div>
+                                    <h5><b>Medio de transporte:</b></h5>
+                                    <h6> {{transporte.displayName}}</h6>
+                                </div>
+                            </div>
+                    {{/tramos}}
+            </div>
+            <div class="izquierdaYDerecha">
+                <div>
+                    <a href="/trayectos" style="display: inline-block">
+                        <input type='button' class="botones" name='volver' value='Volver' >
+                    </a>
+                </div>
+		<div>
+                <a href="/trayectos/{{trayecto.idTrayecto}}/tramos/medioTransporte" >
+                    <input type='button' class="botones" name='nuevoTramo' value='Nuevo Tramo' >
+                </a>
+            </div>
+            </div>
+        </div>
+
+{{/partial}}
+
+{{>layout.html.hbs}}

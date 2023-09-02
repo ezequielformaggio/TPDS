@@ -1,0 +1,38 @@
+{{#partial "titulo"}}Reportes{{/partial}}
+    <link rel="stylesheet" type="text/css" href="/stylesheets/reportes.css">
+{{#partial "principal"}}
+    <div class="recuadroChico" >
+
+        <a href="/reportes">
+            <i class="fa-solid fa-arrow-left back"></i>
+        </a>
+
+	<form method="POST" >
+	
+            <h1 style="text-align: center">Reportes por Totales</h1>
+
+            <div class="row contenedor" >
+                Periodicidad: <select name="periodicidad">
+                <option value="MENSUAL">Mensual</option>
+                <option value="ANUAL">Anual</option>
+            </select>
+
+                Fecha: <input type="date" name="fecha" value="2020-01-01"/>
+                <div class="izquierdaYDerecha">
+                    <div>
+                        <a href="/reportes/total/territorial" >
+                            <input class="botones" type="submit" formaction="/reportes/total/territorial" name="nombre" value="Total por Sector Territorial" />
+                        </a>
+                    </div>
+                    <div>
+                        <a href="/reportes/total/organizacion" >
+                            <input class="botones" type="submit" formaction="/reportes/total/organizacion" name="nombre" value="Total por Tipo de Organización" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+{{/partial}}
+
+{{>layout.html.hbs}}

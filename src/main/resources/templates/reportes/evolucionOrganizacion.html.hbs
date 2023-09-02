@@ -1,0 +1,32 @@
+{{#partial "titulo"}}Reportes{{/partial}}
+<head>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/composicionTerritorial.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/totalTerritorial.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/evolucionReportes.css">
+</head>
+{{#partial "principal"}}
+    <div class="recuadroChico centrar" >
+        <a href="/reportes/evolucion">
+            <i class="fa-solid fa-arrow-left back"></i>
+        </a>
+
+                <h1 style="text-align: center">Reporte Evolución Organización</h1>
+            <div class="grillaEvoluciones">
+                <div>
+                    <div class="col" style="background-color:#F090B2">
+                        <b class="fecha">Fecha</b>
+                        <b class="emisionTotal">Emision Total</b>
+                    </div>
+                </div>
+                {{#reportes}}
+                <div>
+                    <input class="sinborde" type="Text" name="sector" value="{{fecha}}"  readonly="true"/>
+                    <input class="cuadroRestante sinborde" type="Text" name="total" value="{{valor}}" readonly="true"/>
+                </div>
+                {{/reportes}}
+            </div>
+        </div>
+    </div>
+{{/partial}}
+
+{{>layout.html.hbs}}

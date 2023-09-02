@@ -1,0 +1,40 @@
+{{#partial "titulo"}}Mi Impacto Ambiental{{/partial}}
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/index.css">
+</head>
+
+{{#partial "principal" }}
+<div class="index">
+    <h1>TPA Impacto ambiental</h1>
+    <!--<section>
+        {{#if esMiembro}}
+            <a class="dropdown-item" href="/vinculaciones" >Vinculaciones</a>
+            <a class="dropdown-item" href="/trayectos" >Trayectos</a>
+        {{else}}
+            <a class="dropdown-item" href="/vinculaciones" >Vinculaciones</a>
+            <a class="dropdown-item" href="/mediciones" >Mediciones</a>
+            <a class="dropdown-item" href="/calculadora">Calculadora de HC</a>
+            <a class="dropdown-item" href="/reportes">Reportes</a>
+        {{/if}}
+    </section> -->
+    <section>
+        <h2>Un tercer subtitulo</h2>
+        <p>A modo de prueba deberiamos ver las organizaciones a continuacion. Siempre y cuando haya alguna
+            cargada en la DB, porque cuando corremos algo el persistence esta configurado como para que cree
+            siempre desde cero. De todas maneras se pueden agregar antes de probarlo y deberian reflejarse como
+            una lista. Por el momento arme una especie de Bootstrap que se conforme al lanzar el archivo de rutas.
+            Es como para ver que levante cosas y las muestre nada mas, despues hay que sacarlo.
+        </p>
+        <ul>
+            {{#organizaciones}}
+            <li>{{razonSocial}}</li>
+            {{/organizaciones}}
+        </ul>
+    </section>
+</div>
+{{/partial}}
+
+</html>
+{{> layout.html.hbs }}

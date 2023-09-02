@@ -1,0 +1,31 @@
+{{#partial "titulo"}}Calculadora{{/partial}}
+
+{{#partial "principal"}}
+        <div class="recuadroChico">
+            <h1>Calculadora de HC</h1>
+            <form method="GET" action="/calculadora/hcorganizacion">
+            <div>
+                <div>
+                    <div> Periodicidad </div>
+                    <select name="periodicidad">
+                        <option value="MENSUAL">Mensual</option>
+                        <option value="ANUAL">Anual</option>
+                    </select>
+                </div>
+
+                <div>
+                    <div> Fecha </div>
+                    <input type="date" name="fecha" value="2020-01-01"/>
+                </div>
+
+                <div class="soloDerecha">
+                    <a href="/calculadora/hcorganizacion">
+                        <input type='submit' class="botones" style="padding: 5px 60px; color: black; font-size: 20px" name='calcularhcorganizacion' value='Calcular huella de carbono' >
+                    </a>
+                </div>
+            </div>
+            </form>
+        </div>
+{{/partial}}
+
+{{>layout.html.hbs}}

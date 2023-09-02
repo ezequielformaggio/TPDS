@@ -1,0 +1,93 @@
+{{#partial "titulo"}}Nuevo Tramo{{/partial}}
+<link rel="stylesheet" type="text/css" href="/stylesheet/tramos.css">
+{{#partial "principal"}}
+    <div class="recuadroChico">
+        <h4>Registrar tramo</h4>
+        <form method="POST" action="/trayectos/{{idTrayecto}}/tramos" >
+            <div class="elementosFormulario">
+                <div>
+		<div> Medio de transporte </div>
+                    <select name="medioDeTransporte">
+                        <option value="{{medioDeTransporte}}">{{medioDeTransporte}}</option>
+                    </select>
+                </div>
+
+                    {{#if transportePublico}}
+                        <div>
+                            <div> Línea </div>
+                            <select name="lineaTransportePublico">
+                                <option value="{{lineaTransportePublico.id}}"> {{lineaTransportePublico.displayName}} </option>
+                            </select>
+                        </div>
+                    {{/if}}
+
+                    {{#if transporteEcologico}}
+                        <select name="medioTransporteEcologico">
+                            {{#transportesEcologicos}}
+                            <option value="{{id}}"> {{displayName}} </option>
+                            {{/transportesEcologicos}}
+                        </select>
+
+                    {{/if}}
+
+                    {{#if transporteContratado}}
+                        <select name="medioTransporteContratado">
+                            {{#transportesContratados}}
+                            <option value="{{id}}"> {{displayName}} </option>
+                            {{/transportesContratados}}
+                        </select>
+
+                    {{/if}}
+
+                    {{#if transporteParticular}}
+                        <select name="medioTransporteParticular">
+                            {{#transportesParticulares}}
+                            <option value="{{id}}"> {{displayName}} </option>
+                            {{/transportesParticulares}}
+                        </select>
+
+                    {{/if}}
+
+                    {{#if transportePublico}}
+                        <div>
+                            <div> Origen </div>
+                            {{#paradas}}
+                            <input type="checkbox" id="{{id}}" name="{{id}}" value="checked">
+                            <label for="{{id}}"> {{nombre}}</label><br>
+                            {{/paradas}}
+                            <div> Destino </div>
+                        </div>
+
+                    {{else}}
+                        <div>
+                            <div> Direccion origen </div>
+                            <input type="text" name="localidadOrigen" placeholder="localidad" style="text-align: center"/>
+                            <input type="text" name="calleOrigen" placeholder="calle" style="text-align: center"/>
+                            <input type="text" name="alturaOrigen" placeholder="altura" style="text-align: center"/>
+                        </div>
+
+                        <div>
+                            <div> Direccion destino </div>
+                            <input type="text" name="localidadDestino" placeholder="localidad" style="text-align: center"/>
+                            <input type="text" name="calleDestino" placeholder="calle" style="text-align: center"/>
+                            <input type="text" name="alturaDestino" placeholder="altura" style="text-align: center"/>
+                        </div>
+                    {{/if}}
+	    </div>
+            <div class="izquierdaYDerecha">
+                <div>
+                    <a href="/trayectos/{{idTrayecto}}/tramos/medioTransporte">
+                        <input type='button' class="botones" name='cancelar' value='Cancelar' >
+                    </a>
+                </div>
+                <div>
+                    <!a href="/trayectos/{{idTrayecto}}">
+                        <input type='submit'class="botones" name='guardarTramo' value='Guardar tramo'>
+                    <!/a>
+                </div>
+            </div>
+        </form>
+    </div>
+{{/partial}}
+
+{{>layout.html.hbs}}

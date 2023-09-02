@@ -1,0 +1,18 @@
+{{#partial "titulo"}}Calculadora{{/partial}}
+<link rel="stylesheet" type="text/css" href="/layout.css">
+{{#partial "principal"}}
+    <div class="recuadroChico">
+        <div>
+            <h1>Resultado HC</h1>
+            <h2> {{resultado}} kgCO2eq</h2>
+        </div>
+
+        <div style="margin-top: 3rem;">
+            <a href="/calculadora">
+                <input type='button' class="botones"  name='volver' value='Volver' >
+            </a>
+        </div>
+    </div>
+{{/partial}}
+
+{{>layout.html.hbs}}

@@ -1,0 +1,55 @@
+{{#partial "titulo"}}Nueva Medicion{{/partial}}
+
+{{#partial "principal"}}
+     <div class="recuadroChico">
+        <div>
+            <h1>Registrar medición</h1>
+
+            <form method="POST" action="/mediciones/nueva" enctype="multipart/form-data">
+                <div class="elementosFormulario">
+                    <div>
+                        <div> Tipo de consumo</div>
+                        <select name="tipoDeConsumo">
+                            {{#tiposDeConsumo}}
+                                <option value="{{descripcion}}"> {{descripcion}} </option>
+                            {{/tiposDeConsumo}}
+                        </select>
+                    </div>
+
+                    <div>
+                        <div> Valor</div>
+                        <input type="number" name="valor" value="0" required min="0"/>
+                    </div>
+
+                    <div>
+                        <div> Periodicidad </div>
+                        <select name="periodicidad">
+                            <option value="MENSUAL">Mensual</option>
+                            <option value="ANUAL">Anual</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <div> Periodo de imputacion</div>
+                        <input type="date" name="periodoDeImputacion" value="2020-01-01"/>
+                    </div>
+
+                    <div>
+                        <div> Archivo de mediciones</div>
+                        <input type="file" name="archivoMediciones" accept=".csv">
+                    </div>
+                </div>
+
+                <div class="izquierdaYDerecha">
+                    <a href="/mediciones" style="display: inline-block">
+                        <input type='button' class="botones"  name='cancelar' value='Cancelar' >
+                    </a>
+                    <input type='submit' class="botones" name='guardarMedicion' value='Confirmar'>
+
+                </div>
+            </form>
+        </div>
+     </div>
+{{/partial}}
+
+{{>layout.html.hbs}}

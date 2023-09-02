@@ -1,0 +1,30 @@
+{{#partial "titulo"}}Reportes{{/partial}}
+<link rel="stylesheet" type="text/css" href="/stylesheets/composicionTerritorial.css">
+{{#partial "principal"}}
+    <div class="recuadroChicoComposicion centrar" >
+        <a href="/reportes/composicion">
+            <i class="fa-solid fa-arrow-left back"></i>
+        </a>
+
+                <h1 style="text-align: center">Reporte Composicion Territorial</h1>
+            <div class="grillaSectorTerritorial">
+                <div>
+                    <div class="col" style="background-color:#F090B2">
+                        <b >Sector Territorial</b>
+                        <b class="emisionOrg">Emision Organizacion</b>
+                        <b class="emisionMiembros">Emision Miembros</b>
+                        <b class="emisionTotal">Emision Total</b>
+                    </div>
+                </div>
+                <div>
+                    <input class="sinborde" type="Text" name="sector" value="{{sectorTerritorial.descripcion}}"  readonly="true"/>
+                    <input class="cuadroRestante sinborde" type="Text" name="emiorg" value="{{valor3}}" readonly="true"/>
+                    <input class="cuadroRestante sinborde" type="Text" name="emimiebro" value="{{valor2}}" readonly="true"/>
+                    <input class="cuadroRestante sinborde" type="Text" name="total" value="{{valor1}}" readonly="true"/>
+                </div>
+            </div>
+        
+    </div>
+{{/partial}}
+
+{{>layout.html.hbs}}

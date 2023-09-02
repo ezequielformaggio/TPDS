@@ -1,0 +1,30 @@
+{{#partial "titulo"}}Nuevo Trayecto{{/partial}}
+    <link rel="stylesheet" type="text/css" href="/stylesheets/nuevoTrayecto.css">
+
+{{#partial "principal"}}
+        <div class="recuadroChico">
+            <div class="barraDeAvance">
+                <div><h3>1. Nombre</h3></div>
+                <div><h3>2. Carga de tramos</h3></div>
+            </div>
+
+            <form method="POST" action="/trayectos" >
+                <div>
+                    <h2>Complete el nombre del trayecto</h2>
+                        <div>
+                            <label> Nombre</label>
+                            <input type="text" name="descripcionTrayecto" placeholder="Nombre Trayecto"/>
+                        </div>
+                </div>
+
+                <div class="izquierdaYDerecha">
+                    <a href="/trayectos">
+                        <input type='button' class="botones" name='cancelar' value='Cancelar' >
+                    </a>
+                        <input type='submit' class="botones" name='cargarTramo' value='Carga de Tramos'>
+                </div>
+            </form>
+        </div>
+{{/partial}}
+
+{{>layout.html.hbs}}

@@ -1,0 +1,14 @@
+.mediciones{
+    display: flex;
+    flex-direction: column;
+}
+
+.medicion{
+    display: flex;
+    border-radius: 1em;
+    border-color: #D35C86;
+    border-width: 0.15em;
+    border-style: solid;
+    margin-bottom: 2rem;
+    justify-content: space-around;
+}

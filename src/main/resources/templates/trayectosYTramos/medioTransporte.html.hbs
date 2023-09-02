@@ -1,0 +1,44 @@
+{{#partial "titulo"}}Nueva Medicion{{/partial}}
+
+{{#partial "principal"}}
+    <div class="recuadroChico">
+        <div>
+            <h4>Registrar tramo</h4>
+            <form method="GET" action="/trayectos/{{idTrayecto}}/tramos/nuevo" >
+
+                        <div>
+                            <div> Medio de transporte </div>
+                            <select name="medioDeTransporte">
+                                <option value="TransportePublico"> Transporte público </option>
+                                <option value="TransporteContratado"> Transporte contratado </option>
+                                <option value="TransporteEcologico"> Transporte ecologico </option>
+                                <option value="TransporteParticular"> Transporte particular </option>
+                            </select>
+                        </div>
+			<div>
+                            <div> * Para transporte público especifique línea </div>
+                            <select name="lineaTransportePublico">
+                            {{#lineasTransportePublico}}
+                                <option value="{{id}}"> {{displayName}} </option>
+                            {{/lineasTransportePublico}}
+                            </select>
+                        </div>
+			<div class="izquierdaYDerecha">
+	                        <div>
+                        <a href="/trayectos/{{idTrayecto}}/tramos">
+                            <input type='button' class="botones" name='cancelar' value='Cancelar' >
+                        </a>
+                    </div>
+                    <div>
+                        <a href="/trayectos/{{idTrayecto}}/tramos/nuevo">
+                            <input type='submit' class="botones" name='siguiente' value='Siguiente'>
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+{{/partial}}
+
+{{>layout.html.hbs}}

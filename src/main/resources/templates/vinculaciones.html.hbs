@@ -1,0 +1,120 @@
+{{#partial "titulo"}}Vinculaciones{{/partial}}
+    <link rel="stylesheet" type="text/css" href="/stylesheets/vinculaciones.css">
+{{#partial "principal"}}
+        <div class="recuadroGrillas">
+            <div style="display: flex; align-items: center; flex-direction: column;">
+                <h1 style="text-align: center">Vinculaciones</h1>
+
+                <form method="POST" action="/vinculaciones" >
+                    <table>
+                        <thead class="headerTabla">
+                        <tr>
+                            <th>ID Vinculacion</th>
+                            <th>Miembro</th>
+                            <th>ID Miembro</th>
+                            <th>Sector</th>
+                            <th>Estado</th>
+
+                        {{#if esMiembro}}
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {{#vinculaciones}}
+                                <tr>
+                                    <td>
+                                        <input type="Text" name="vinculacionId" value="{{id}}" readonly="true"/>
+                                    </td>
+                                    <td>
+                                        <input type="Text" name="vinculacionMiembroNombre" value="{{miembro.apellido}}, {{miembro.nombre}}" readonly="true"/>
+                                    </td>
+                                    <td>
+                                        <input type="Text" name="vinculacionMiembroId" value="{{miembro.id}} "readonly="true"/>
+                                    </td>
+                                    <td>
+                                        <input type="Text" name="vinculacionSector" value="{{sector.descripcion}}" readonly="true"/>
+                                    </td>
+                                    <td>
+                                        <input type="Text" name="vinculacionEstado" value="{{estado}}" readonly="true"/>
+                                    </td>
+                                </tr>
+                            {{/vinculaciones}}
+                            </tbody>
+                        {{else}}
+                                <th>Gestionar</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {{#vinculacionesPendientes}}
+                                <tr>
+                                    <td>
+                                        <input type="Text" name="vinculacionId" value="{{id}}" readonly="true"/>
+                                    </td>
+                                    <td>
+                                        <input type="Text" name="vinculacionMiembroNombre" value="{{miembro.apellido}}, {{miembro.nombre}}" readonly="true"/>
+                                    </td>
+                                    <td>
+                                        <input type="Text" name="vinculacionMiembroId" value="{{miembro.id}} "readonly="true"/>
+                                    </td>
+                                    <td>
+                                        <input type="Text" name="vinculacionSector" value="{{sector.descripcion}}" readonly="true"/>
+                                    </td>
+                                    <td>
+                                        <input type="Text" name="vinculacionEstado" value="{{estado}}" readonly="true"/>
+                                    </td>
+                                    <td>
+                                        <input  type="submit" name="decisionVinculacion" value="Aceptar"/>
+                                        <input  type="submit" name="decisionVinculacion" value="Rechazar"  style="margin-left: 1em"/>
+                                    </td>
+                                </tr>
+                            {{/vinculacionesPendientes}}
+                            {{#vinculacionesRealizadas}}
+                                <tr>
+                                    <td>
+                                        <input type="Text" name="vinculacionId" value="{{id}}" readonly="true"/>
+                                    </td>
+                                    <td>
+                                        <input type="Text" name="vinculacionMiembroNombre" value="{{miembro.apellido}}, {{miembro.nombre}}" readonly="true"/>
+                                    </td>
+                                    <td>
+                                        <input type="Text" name="vinculacionMiembroId" value="{{miembro.id}} "readonly="true"/>
+                                    </td>
+                                    <td>
+                                        <input type="Text" name="vinculacionSector" value="{{sector.descripcion}}" readonly="true"/>
+                                    </td>
+                                    <td>
+                                        <input type="Text" name="vinculacionEstado" value="{{estado}}" readonly="true"/>
+                                    </td>
+                                    <td>
+                                        <input type="Text" name="vinculacionEstado" value="{{estado}}" readonly="true"/>
+                                    </td>
+                                </tr>
+                            {{/vinculacionesRealizadas}}
+                            </tbody>
+                        {{/if}}
+                    </table>
+                </form>
+            </div>
+
+            {{#if esMiembro}}
+                <h4>Solicitar nueva vinculacion</h4>
+                <form method="POST" action="/vinculaciones/nueva" >
+
+                    <div>
+                        <div> Sectores disponibles</div>
+                        <select name="sectorid">
+                            {{#sectores}}
+                                <option value="{{id}}"> Sector:{{descripcion}}, Razon social organizacion: {{organizacion.razonSocial}} </option>
+                            {{/sectores}}
+                        </select>
+                    </div>
+
+                    <div class="soloDerecha">
+                        <input type='submit' class="botones" name='solicitarVinculacion' value='Solicitar Vinculacion'>
+                    </div>
+                </form>
+            {{else}}
+            {{/if}}
+        </div>
+{{/partial}}
+
+{{>layout.html.hbs}}

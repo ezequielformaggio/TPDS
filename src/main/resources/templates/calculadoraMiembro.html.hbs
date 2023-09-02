@@ -1,0 +1,45 @@
+{{#partial "titulo"}}Calculadora{{/partial}}
+
+{{#partial "principal"}}
+
+        <div class="recuadroChico">
+            <h1>Calculadora de HC</h1>
+            {{#if hayOrganizaciones}}
+            <form method="GET" action="/calculadora/hcmiembro">
+                <div>
+                    <div style="max-width: 18rem;">
+                        <div class="card-body">
+
+                            <div class="row justify-content-start">
+                                <div class="col-3 m-2"> Organizacion </div>
+                                <select name="organizacion">
+                                    {{#organizaciones}}
+                                        <option value={{id}}>{{razonSocial}}</option>
+                                    {{/organizaciones}}
+                                </select>
+                            </div>
+
+                            <div class="row justify-content-start">
+                                <div class="col-3 m-2"> Periodicidad </div>
+                                <select name="periodicidad">
+                                    <option value="MENSUAL">Mensual</option>
+                                    <option value="ANUAL">Anual</option>
+                                </select>
+                            </div>
+
+                            <a href="/calculadora/hcmiembro" style="display: inline-block">
+                                <input type='submit' class="botones" style="padding: 5px 60px; color: black; font-size: 20px" name='calcularhcmiembro' value='Calcular huella de carbono' >
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+            </form>
+        {{else}}
+            <h2>No hay organizaciones disponibles</h2>
+        {{/if}}
+
+        </div>
+{{/partial}}
+
+{{>layout.html.hbs}}

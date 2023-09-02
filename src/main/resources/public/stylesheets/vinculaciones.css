@@ -1,0 +1,35 @@
+.headerTabla{
+    background-color:#F090B2;
+}
+
+.recuadroGrillas {
+    padding: 2rem;
+    border-radius: 2rem;
+    background-color: white;
+    color: black;
+    width: 80%;
+}
+
+table{
+    display: table;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+th{
+    border-style: solid;
+    border-color: black;
+}
+
+td{
+    border-style: solid;
+    border-color: black;
+}
+
+input{
+   border-style: none;
+   text-align: center;
+   padding: 0;
+   margin: 0;
+   max-width: 10rem;
+}

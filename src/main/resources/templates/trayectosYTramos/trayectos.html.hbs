@@ -1,0 +1,30 @@
+{{#partial "titulo"}}Mis trayectos{{/partial}}
+    <link rel="stylesheet" type="text/css" href="/stylesheets/trayectos.css">
+
+{{#partial "principal"}}
+        <div class="recuadroChico">
+            <h1>Mis trayectos</h1>
+            <div>
+                <ul class="listaTrayectos">
+                    {{#trayectos}}
+                        <div class="trayecto">
+                                <div class="descripcion"><h2>{{descripcion}}</h2></div>
+                                <div>
+                                    <div>
+                                        <a class="botones" href="/trayectos/{{idTrayecto}}/tramos" >Ver tramos</a>
+                                    </div>
+                                </div>
+                        </div>
+                    {{/trayectos}}
+                </ul>
+            </div>
+
+            <div class="soloDerecha">
+                <a href="/trayectos/nuevo" >
+                    <input type='submit' class="botones" name='cargarTrayecto' value='Nuevo trayecto'>
+                </a>
+            </div>
+        </div>
+{{/partial}}
+
+{{>layout.html.hbs}}
